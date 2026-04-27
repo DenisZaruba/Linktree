@@ -1,0 +1,127 @@
+.cards{
+  width: 100%;
+  background-color: #F3F3F1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 0 140px 0;
+     @media(max-width: 768px) {
+    padding: 64px 10px 80px 10px;
+
+     }
+}
+.wrapper{
+  max-width: 1344px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title{
+  margin-bottom: 56px;
+  text-align: center;
+  @media(max-width: 768px) {
+    margin-bottom: 32px;
+    }
+}
+
+.cardsWrapper{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 32px;
+  @media(max-width: 768px) {
+    gap: 24px;
+    }
+}
+.card{
+  max-width: 416px;
+  width: 100%;
+  &Background{
+    padding: 40px;
+    border-radius: 32px;
+    &0{
+      background-color: #E9C0E9;
+      color: #502274;
+      & button{
+        border-color: #502274 !important;
+        color: #502274 !important;
+      }
+    }
+    &1{
+      background-color: #D2E823;
+      color: #1E2330;
+      & button{
+        border-color: #1E2330;
+        color: #1E2330;
+      }
+    }
+    &2{
+      background-color: #502274;
+      color: #E9C0E9;
+      & button{
+        border-color: #E9C0E9 !important;
+        color: #E9C0E9 !important;
+      }
+    }
+    &3{
+      background-color: #061492;
+      color: #FFFFFF;
+      & button{
+        border-color: #FFFFFF !important;
+        color: #FFFFFF !important;
+      }
+    }
+    &4{
+      background-color: #254F1A;
+      color: #D2E823;
+      & button{
+        border-color: #D2E823 !important;
+        color: #D2E823 !important;
+      }
+    }
+    &5{
+      background-color: #D6A336;
+      color: #1E2330;
+      & button{
+        border-color: #1E2330 !important;
+        color: #1E2330 !important;
+      }
+    }
+  }
+  &Image{
+    position: relative;
+    width: 336px;
+    height: 281px;
+    margin-bottom: 40px;
+         @media(max-width: 768px) {
+    width: 300px;
+    margin: 0 auto 12px auto;
+         }
+  }
+  &Title{
+    font-size: 26px;
+    margin-bottom: 24px;
+             @media(max-width: 768px) {
+              margin-bottom: 16px;
+             }
+  }
+  &Subtitle{
+    font-size: 18px;
+    letter-spacing: -0.4px;
+    line-height: 28px;
+    margin-bottom: 20px;
+    @media(max-width: 768px) {
+      margin-bottom: 12px;
+    }
+  }
+  &Buttons{
+    display: flex;
+    gap: 8px;
+    font-size: 13px;
+  }
+}

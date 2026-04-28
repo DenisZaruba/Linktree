@@ -1,0 +1,71 @@
+
+.profile{
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  gap: 30px;
+}
+.deviderY{
+  width: 1px;
+  height: auto;
+  background: #9c9fa0;
+}
+.container{
+  &First{
+    max-width: 890px;
+    width: 100%;
+  }
+  &Second{
+    width: 100%;
+  }
+}
+.title{
+  margin-bottom: 16px;
+  &Second{
+    margin-top: 48px;
+  }
+}
+
+
+.content{
+  background: #fff;
+  padding: 28px 24px;
+  border-radius: 24px;
+  &Avatar{
+    margin: 0 auto 24px auto;
+    background: #60696C;
+    padding: 28px 35px;
+    width: 94px;
+    height: 94px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  
+}
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.card{
+  width: 128px;
+  height: 200px;
+  border-radius: 15px;
+}
+
+.phone{
+  position: sticky;
+  top: 20%;
+  margin: 0 auto;
+  background: transparent;
+  width: 195px;
+  height: 400px;
+  border-radius: 30px;
+  border: 10px solid #000000;
+}

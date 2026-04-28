@@ -78,7 +78,7 @@ const Share = () => {
             </Typography>
             <Typography variant="h2" weight="black" className={styles.subtitle}>
               Connect your content in all its forms and help followers find more of what they’re looking for. Your TikToks, Tweets, YouTube videos, music, articles, recipes, podcasts and more… It all comes together in one powerful place            </Typography>
-            <Button variant="primary" color="pink" className={styles.button}>
+            <Button as='a' href="/create/appearance" variant="primary" color="pink" className={styles.button}>
               Get your free Linktree
             </Button>
           </div>

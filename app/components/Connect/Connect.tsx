@@ -76,7 +76,7 @@ const Connect = () => {
             </Typography>
             <Typography variant="h2" weight="black" className={styles.subtitle}>
               Connect the best experiences on the internet to your Linktree by choosing from Typeform, Cameo, Twitter and over 30+ other Link Apps. Each will help you get more engagement with your content, make and collect more money and grow your following faster.</Typography>
-            <Button variant="primary" color="pink" className={styles.button}>
+            <Button as='a' href="/create/appearance" variant="primary" color="pink" className={styles.button}>
               Explore Marketplace
             </Button>
           </div>

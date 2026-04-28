@@ -76,7 +76,7 @@ const More = () => {
             </Typography>
             <Typography variant="h2" weight="black" className={styles.subtitle}>
               Linktrees get an average of 1.8 clicks per visit, meaning you get more eyes on what matters most. Drive deeper discovery and engagement with Linktree – where your can followers discover more of you, faster.</Typography>
-            <Button variant="primary" color="lime" className={styles.button}>
+            <Button as='a' href="/create/appearance" variant="primary" color="lime" className={styles.button}>
               Get your free Linktree
             </Button>
           </div>

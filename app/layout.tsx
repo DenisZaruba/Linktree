@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Arial from 'next/font/local';
 import "./globals.css";
+import Header from "./modules/Header/Header";
 const arial = Arial({
   src: [
     { path: "./fonts/ArialRegular.ttf", weight: "400" },
@@ -27,7 +28,10 @@ export default function RootLayout({
       lang="en"
       className={`${arial.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

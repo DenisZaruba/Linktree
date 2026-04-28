@@ -76,7 +76,7 @@ const Intro = () => {
             <Typography variant="h2" weight="black" className={styles.subtitle}>
               Help your followers discover everything you’re sharing all over the internet, in one simple place. They’ll thank you for it!
             </Typography>
-            <Button variant="primary" color="dark" className={styles.button}>
+            <Button as='a' href="/create/appearance" variant="primary" color="dark" className={styles.button}>
               Get your free Linktree
             </Button>
           </div>

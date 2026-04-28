@@ -78,7 +78,7 @@ const Manage = () => {
             </Typography>
             <Typography variant="h2" weight="black" className={styles.subtitle}>
               Websites are slow, clunky, hard to update and maintain. Linktree is fast, friendly and easy for anyone to use. No code, no developers. Just link, share and grow!</Typography>
-            <Button variant="primary" color="pink" className={styles.button}>
+            <Button as='a' href="/create/appearance" variant="primary" color="pink" className={styles.button}>
               Get your free Linktree
             </Button>
           </div>

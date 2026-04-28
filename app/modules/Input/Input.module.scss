@@ -1,0 +1,81 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.label {
+  font-size: 14px;
+  color: #676B5F;
+  position: absolute;
+  top: 30%;
+  left: 16px;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.labelFocused {
+  top: 5%;
+  left: 16px;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  width: 100%;
+  height: 100%;
+  cursor: text;
+  padding: 16px;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+
+  background: transparent;
+  transition: all 0.2s ease;
+   position: relative;
+    top: 6px;
+ 
+}
+
+.icon {
+  display: flex;
+  margin: 0 6px;
+}
+
+/* variants */
+.default {
+  background: #F6F7F5;
+}
+
+.outline {
+  border: 1px solid #1E2330;
+  background: transparent;
+}
+
+.ghost {
+  background: transparent;
+}
+
+/* states */
+.error {
+  border: 1px solid red;
+}
+
+.errorText {
+  font-size: 12px;
+  color: red;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

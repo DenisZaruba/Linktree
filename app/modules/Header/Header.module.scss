@@ -1,0 +1,59 @@
+.header{
+  position: fixed;
+  top: -100px;
+  opacity: 0;
+  left: 37px;
+  right: 0;
+  z-index: 10;
+  padding: 15px 15px;
+  background: #FFF;
+  border-radius: 10000px;
+  outline: 0.8px solid #e8e8e8;
+  width: 93%;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  transition: all 0.5s ease;
+  &Show{
+    opacity: 1;
+    top: 20px;
+      @media(max-width: 768px) {
+        top: 10px;
+        opacity: 1;
+      }
+  }
+  @media(max-width: 768px) {
+    left: 5px;
+    top: 10px;
+    width: 98%;
+    }
+     &Create{
+     left: 5px;
+      top: 5px;
+      width: 99%;
+  }
+}
+
+.logo{
+  flex-shrink: 0;
+}
+
+.link{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1E2330;
+  font-size: 14px;
+  font-weight: 700;
+  color: #676B5F;
+   svg path{
+    fill: #676B5F;
+   }
+  &.active{
+    color: #000;
+    font-weight: 700;
+    svg path{
+      fill: #000;
+    }
+  }
+}

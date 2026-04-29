@@ -57,6 +57,7 @@
   width: 128px;
   height: 200px;
   border-radius: 15px;
+  overflow: hidden;
 }
 
 .phone{
@@ -68,4 +69,40 @@
   height: 400px;
   border-radius: 30px;
   border: 10px solid #000000;
+  overflow: hidden;
+}
+
+.linksExample{
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 90%;
+}
+
+.linkExample{
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  z-index: 2;
+  padding: 10px;
+  border-width: 2px;
+  margin-bottom: 2px;
+}
+
+.avatarExample{
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.linkButton{
+  margin-bottom: 16px;
+} 
+
+.linkText{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
 }

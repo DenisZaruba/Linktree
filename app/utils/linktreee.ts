@@ -6,10 +6,10 @@ import GradientRandom from "@/app/components/Backgrounds/GradientRandom";
 import SnowFall from "@/app/components/Backgrounds/SnowFall";
 
 export const linktreeBackgrounds = [
-  {id: 1, background: CyberGrid, title: 'Cyber Grid', },
-  {id: 2, background: CyberNerual, title: 'Cyber Neural', },
-  {id: 3, background: SnowFall, title: 'Snow Fall', },
-  {id: 4, background: GradientRandom, title: 'Gradient Random', },
-  {id: 5, background: ArcadeSpace, title: 'Arcade Space' },
+  {id: 1, background: CyberGrid, title: 'CyberGrid', },
+  {id: 2, background: CyberNerual, title: 'CyberNeural', },
+  {id: 3, background: SnowFall, title: 'SnowFall', },
+  {id: 4, background: GradientRandom, title: 'GradientRandom', },
+  {id: 5, background: ArcadeSpace, title: 'ArcadeSpace' },
   {id: 6, background: Glitch, title: 'Glitch' }
 ]

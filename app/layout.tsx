@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Arial from 'next/font/local';
+import { ToastContainer } from "react-toastify";
 import "./globals.css";
 import Header from "./modules/Header/Header";
 const arial = Arial({
@@ -31,6 +32,8 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Header />
         {children}
+        <ToastContainer />
+
       </body>
     </html>
   );

@@ -14,9 +14,15 @@ const Header = () => {
 
   const isCreatePage = pathname && pathname.startsWith('/create');
 
+  const hideHeader = pathname.startsWith('/linktrees');
+
   useEffect(() => {
     setIsShown(true)
   }, []);
+
+
+  if (hideHeader) return null;
+
 
   return (
     <div className={cx(styles.header, { [styles.headerCreate]: isCreatePage, [styles.headerShow]: isShown })}>

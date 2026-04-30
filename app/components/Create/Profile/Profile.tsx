@@ -1,5 +1,8 @@
 'use client';
+import axios from 'axios';
 import cx from 'classnames';
+import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
 
 import { Button } from '@/app/modules/Button/Button';
 import Input from '@/app/modules/Input/Input';
@@ -8,24 +11,56 @@ import { linktreeBackgrounds } from '@/app/utils/linktreee';
 import { useState } from 'react';
 import styles from './Profile.module.scss';
 
+
 const Profile = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [name, setName] = useState('');
   const [backgroundColor, setBackgroundColor] = useState('');
   const [borderColor, setBorderColor] = useState('');
   const [colorText, setColorText] = useState('');
-  const [links, setLinks] = useState<{ id: number; text: string; url: string }[]>([]);
+  const [links, setLinks] = useState<{ id: number; title: string; url: string }[]>([]);
   const [currentBackground, setCurrentBackground] = useState(linktreeBackgrounds[0].id);
   const handleChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   }
 
+  const { push } = useRouter();
+
   const handleAddLink = () => {
-    setLinks(current => [...current, { id: current.length + 1 || 1, text: '', url: '' }]);
+    setLinks(current => [...current, { id: current.length + 1 || 1, title: '', url: '' }]);
   }
 
   const ActiveBackground = linktreeBackgrounds.find(
     ({ id }) => id === currentBackground
   )?.background;
+
+  const handleCreateLink = async () => {
+    const linktreeData = {
+      name,
+      theme: linktreeBackgrounds.find(({ id }) => id === currentBackground)?.title || '',
+      links: links.map(({ title, url }) => ({ title, url })),
+      linkBackground: backgroundColor,
+      linkBorder: borderColor,
+      linkColor: colorText,
+    };
+
+    setIsLoading(true);
+    toast.loading('Creating linktree...', { autoClose: false, toastId: 'creating' });
+    console.log(linktreeData);
+    try {
+      const data = await axios.post('/api/linktree', linktreeData)
+        .then(response => {
+          setIsLoading(false);
+          return response.data
+        })
+      toast.success('Linktree created successfully!');
+      push(`/linktrees/${data.hash}`, {});
+    } catch (error: any) {
+      setIsLoading(false);
+      toast.dismiss('creating');
+      toast.error(error.response?.data?.error || 'Error creating linktree.');
+    }
+  }
 
 
   return (
@@ -58,10 +93,10 @@ const Profile = () => {
             <input type='color' onChange={(e) => setColorText(e.target.value)} value={colorText} />
             <Typography variant="h3" weight="black">LinksInfo</Typography>
             <Button disabled={links.length >= 5} className={styles.linkButton} color='pink' variant='primary' onClick={handleAddLink}>Add</Button>
-            {links.map(({ id, text, url }) => (
+            {links.map(({ id, title, url }) => (
               <div key={id}>
                 <div className={styles.linkText}>
-                  <Input label="Text" value={text} onChange={(e) => setLinks(current => current.map(link => link.id === id ? { ...link, text: e.target.value } : link))} />
+                  <Input label="Title" value={title} onChange={(e) => setLinks(current => current.map(link => link.id === id ? { ...link, title: e.target.value } : link))} />
                   <Input label="Url" value={url} onChange={(e) => setLinks(current => current.map(link => link.id === id ? { ...link, url: e.target.value } : link))} />
                 </div>
                 <Button className={styles.linkButton} color='pink' variant='secondary' onClick={() => setLinks(current => current.filter(link => link.id !== id))}>Delete</Button>
@@ -70,6 +105,7 @@ const Profile = () => {
 
           </div>
         </div>
+        <Button disabled={isLoading} className={styles.createButton} color='lime' variant='primary' onClick={handleCreateLink}>Create</Button>
       </div>
       <div className={styles.deviderY} />
       <div className={styles.containerSecond}>
@@ -78,7 +114,7 @@ const Profile = () => {
           {name && <div className={cx(styles.contentAvatar, styles.avatarExample)}>{name[0]?.toUpperCase()}</div>}
           {links.length > 0 && backgroundColor && <div className={styles.linksExample}>
             {links.map(link => (
-              <div key={link.id} className={styles.linkExample} style={{ backgroundColor, borderColor, color: colorText }}><span>{link.text}</span></div>
+              <div key={link.id} className={styles.linkExample} style={{ backgroundColor, borderColor, color: colorText }}><span>{link.title}</span></div>
             ))}
           </div>}
         </div>

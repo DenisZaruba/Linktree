@@ -17,6 +17,14 @@
   }
   &Second{
     width: 100%;
+    @media(max-width: 1070px){
+      width: auto;
+    }
+    @media(max-width: 800px){
+      position: fixed;
+      top: 7%;
+      right: 5px;;
+    }
   }
 }
 .title{
@@ -58,6 +66,9 @@
   height: 200px;
   border-radius: 15px;
   overflow: hidden;
+  @media(max-width: 400px){
+    width: 100px;
+  }
 }
 
 .phone{
